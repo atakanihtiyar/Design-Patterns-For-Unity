@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace DesignPatterns.SubclassSandbox
 {
-    private List<SuperPower> superPowers;
-
-    private void Start()
+    internal class Player : MonoBehaviour
     {
-        superPowers = new List<SuperPower>();
-        superPowers.Add(new Fireball());
-        superPowers.Add(new Snowball());
-    }
+        private List<SuperPower> superPowers;
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
+        private void Start()
         {
-            superPowers[0].Activate();
+            superPowers = new List<SuperPower>();
+            superPowers.Add(new Fireball());
+            superPowers.Add(new Snowball());
         }
-        else if(Input.GetButtonDown("Fire2"))
+
+        private void Update()
         {
-            superPowers[1].Activate();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                superPowers[0].Activate();
+            }
+            else if (Input.GetButtonDown("Fire2"))
+            {
+                superPowers[1].Activate();
+            }
         }
     }
 }

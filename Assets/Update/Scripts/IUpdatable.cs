@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUpdatable
+namespace DesignPatterns.Update
 {
-    void OnStart();
-    void OnUpdate(float deltaTime);
-    void OnDestroy();
+    internal interface IUpdatable
+    {
+        void OnStart();
+        void OnUpdate(float deltaTime);
+        void OnDestroy();
+    }
 }
+

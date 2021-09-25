@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SuperPower
+namespace DesignPatterns.SubclassSandbox
 {
-    public abstract void Activate();
-
-    protected void Move(float speed)
+    internal abstract class SuperPower
     {
-        Debug.Log("Speed: " + speed);
-    }
+        public abstract void Activate();
 
-    protected void PlaySound(string soundName)
-    {
-        Debug.Log("Playing sound: " + soundName);
+        protected void Move(float speed)
+        {
+            Debug.Log("Speed: " + speed);
+        }
+
+        protected void PlaySound(string soundName)
+        {
+            Debug.Log("Playing sound: " + soundName);
+        }
     }
 }

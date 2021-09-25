@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snowball : SuperPower
+namespace DesignPatterns.SubclassSandbox
 {
-    public override void Activate()
+    internal class Snowball : SuperPower
     {
-        Move(5f);
-        PlaySound("snowball.wav");
+        public override void Activate()
+        {
+            Move(5f);
+            PlaySound("snowball.wav");
+        }
     }
 }

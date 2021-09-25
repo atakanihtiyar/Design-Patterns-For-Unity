@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : SuperPower
+namespace DesignPatterns.SubclassSandbox
 {
-    public override void Activate()
+    internal class Fireball : SuperPower
     {
-        Move(10f);
-        PlaySound("fireball.wav");
+        public override void Activate()
+        {
+            Move(10f);
+            PlaySound("fireball.wav");
+        }
     }
 }

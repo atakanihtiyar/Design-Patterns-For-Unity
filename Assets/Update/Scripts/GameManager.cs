@@ -3,35 +3,39 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace DesignPatterns.Update
 {
-    [SerializeField] private List<ScriptableObject> updatableObjects;
-    private List<IUpdatable> updatables;
-
-    private void Start()
+    internal class GameManager : MonoBehaviour
     {
-        updatables = updatableObjects.OfType<IUpdatable>().ToList();
-        Debug.Log("Updatables count: " + updatables.Count);
+        [SerializeField] private List<ScriptableObject> updatableObjects;
+        private List<IUpdatable> updatables;
 
-        updatables.ForEach(updatable =>
+        private void Start()
         {
-            updatable.OnStart();
-        });
-    }
+            updatables = updatableObjects.OfType<IUpdatable>().ToList();
+            Debug.Log("Updatables count: " + updatables.Count);
 
-    private void Update()
-    {
-        updatables.ForEach(updatable =>
-        {
-            updatable.OnUpdate(Time.deltaTime);
-        });
-    }
+            updatables.ForEach(updatable =>
+            {
+                updatable.OnStart();
+            });
+        }
 
-    private void OnDestroy()
-    {
-        updatables.ForEach(updatable =>
+        private void Update()
         {
-            updatable.OnDestroy();
-        });
+            updatables.ForEach(updatable =>
+            {
+                updatable.OnUpdate(Time.deltaTime);
+            });
+        }
+
+        private void OnDestroy()
+        {
+            updatables.ForEach(updatable =>
+            {
+                updatable.OnDestroy();
+            });
+        }
     }
 }
+

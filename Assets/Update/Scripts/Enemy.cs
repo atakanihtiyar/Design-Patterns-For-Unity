@@ -2,28 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New enemy", menuName = "Update/Enemy")]
-public class Enemy : ScriptableObject, IUpdatable
+namespace DesignPatterns.Update
 {
-    [SerializeField] private int startHealth = 100;
-    [SerializeField] private int health = 0;
-
-    public void OnStart()
+    [CreateAssetMenu(fileName = "New enemy", menuName = "Update/Enemy")]
+    internal class Enemy : ScriptableObject, IUpdatable
     {
-        health = startHealth;
-    }
+        [SerializeField] private int startHealth = 100;
+        [SerializeField] private int health = 0;
 
-    public void OnUpdate(float deltaTime)
-    {
-        if (Input.GetButtonDown("Fire1"))
+        public void OnStart()
         {
-            health -= 10;
-            Debug.Log("Health: " + health + "\nDelta time: " + deltaTime);
+            health = startHealth;
+        }
+
+        public void OnUpdate(float deltaTime)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                health -= 10;
+                Debug.Log("Health: " + health + "\nDelta time: " + deltaTime);
+            }
+        }
+
+        public void OnDestroy()
+        {
+            health = 0;
         }
     }
-
-    public void OnDestroy()
-    {
-        health = 0;
-    }
 }
+
