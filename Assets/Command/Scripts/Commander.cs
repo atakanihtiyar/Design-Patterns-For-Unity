@@ -33,7 +33,7 @@ namespace DesignPatterns.Command
 
             if (Input.GetKeyDown(KeyCode.U))
             {
-                _invoker.Undo();
+                _invoker.Rewind();
             }
         }
 

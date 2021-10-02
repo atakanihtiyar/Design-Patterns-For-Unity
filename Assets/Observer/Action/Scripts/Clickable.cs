@@ -20,9 +20,9 @@ namespace DesignPatterns.Observer.Action
             }
         }
 
-        private void SomeoneClickedOnMe(Vector3 mouseLocalPositionOnMe)
+        private void SomeoneClickedOnMe(Vector3 mousePosition)
         {
-            OnSomeoneClickedOnMe?.Invoke(gameObject, mouseLocalPositionOnMe);
+            OnSomeoneClickedOnMe?.Invoke(gameObject, mousePosition);
         }
     }
 }

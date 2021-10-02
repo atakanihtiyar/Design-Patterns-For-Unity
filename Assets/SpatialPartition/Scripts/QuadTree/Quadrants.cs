@@ -5,16 +5,15 @@ using UnityEngine;
 namespace DesignPatterns.SpatialPartition
 {
     /// <summary>
-    /// Contains the 4 quadrants of the quadtree
+    /// Stores the 4 quadrants of quadtrees
     /// <list type="quadrants">
-    /// <listheader>Quadrants</listheader>
-    /// <item>North west</item>
-    /// <item>North east</item>
-    /// <item>South west</item>
-    /// <item>South east</item>
+    /// <listheader>Quadrants: </listheader>
+    /// <item>1. North west</item>
+    /// <item>2. North east</item>
+    /// <item>3. South west</item>
+    /// <item>4. South east</item>
     /// </list>
     /// </summary>
-    /// <typeparam name="T">Should behave like shape</typeparam>
     public class Quadrants<T> where T : IAmShape
     {
         #region Fields

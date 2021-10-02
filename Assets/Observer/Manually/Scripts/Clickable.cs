@@ -17,9 +17,9 @@ namespace DesignPatterns.Observer.Manual
             }
         }
 
-        public void SomeoneClickedOnMe(Vector3 mouseLocalPositionOnMe)
+        public void SomeoneClickedOnMe(Vector3 mousePosition)
         {
-            Notify(gameObject, mouseLocalPositionOnMe);
+            Notify(gameObject, mousePosition);
         }
     }
 }

@@ -4,15 +4,12 @@ using UnityEngine;
 
 namespace DesignPatterns.Command
 {
-    /// <summary>
-    /// Command interface
-    /// </summary>
     public interface ICommand
     {
         #region Functions
 
         void Execute();
-        void Undo();
+        void Rewind();
 
         #endregion
     }

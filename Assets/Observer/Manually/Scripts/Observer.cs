@@ -6,6 +6,6 @@ namespace DesignPatterns.Observer.Manual
 {
     internal abstract class Observer : MonoBehaviour
     {
-        public abstract void OnNotify(GameObject obj, Vector3 mouseLocalPositionOnSubject);
+        public abstract void OnNotify(GameObject obj, Vector3 mousePosition);
     }
 }

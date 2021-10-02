@@ -22,7 +22,7 @@ namespace DesignPatterns.Command
             _gameObject.transform.position = _destinationPosition;
         }
 
-        public void Undo()
+        public void Rewind()
         {
             _gameObject.transform.position = _startPosition;
         }

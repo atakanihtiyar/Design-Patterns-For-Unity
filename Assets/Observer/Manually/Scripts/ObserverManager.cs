@@ -8,7 +8,7 @@ namespace DesignPatterns.Observer.Manual
     {
         private static List<Subject> _subjects = new List<Subject>();
 
-        public static void Subscribe(Subject subject)
+        public static void Add(Subject subject)
         {
             if (_subjects == null)
                 _subjects = new List<Subject>();
@@ -16,7 +16,7 @@ namespace DesignPatterns.Observer.Manual
             _subjects.Add(subject);
         }
 
-        public static void Unsubscribe(Subject subject)
+        public static void Remove(Subject subject)
         {
             _subjects.Remove(subject);
         }

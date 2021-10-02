@@ -6,8 +6,6 @@ namespace DesignPatterns.Strategy
 {
     internal class Player : MonoBehaviour
     {
-        private WeaponBase current;
-
         private readonly Dagger FireDagger = new Dagger(40, new FireDamage());
         private readonly Dagger IceDagger = new Dagger(20, new IceDamage());
 

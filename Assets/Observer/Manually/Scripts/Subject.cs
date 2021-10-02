@@ -13,7 +13,7 @@ namespace DesignPatterns.Observer.Manual
 
         private void OnEnable()
         {
-            ObserverManager.Subscribe(this);
+            ObserverManager.Add(this);
         }
 
         public void Subscribe(Observer observer)

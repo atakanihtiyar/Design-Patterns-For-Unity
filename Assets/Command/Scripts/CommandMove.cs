@@ -20,7 +20,7 @@ namespace DesignPatterns.Command
             _gameObject.transform.position += _direction;
         }
 
-        public void Undo()
+        public void Rewind()
         {
             _gameObject.transform.position -= _direction;
         }

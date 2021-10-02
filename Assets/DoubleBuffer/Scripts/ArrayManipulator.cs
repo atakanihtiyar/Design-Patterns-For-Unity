@@ -10,7 +10,7 @@ namespace DesignPatterns.DoubleBuffer
     public static class ArrayManipulator
     {
         /// <summary>
-        /// Function for manipulate your array data with value from another array
+        /// Function for generate new array from another array
         /// </summary>
         /// <typeparam name="ArrayType1"> Array type to manipulate </typeparam>
         /// <typeparam name="ArrayType2"> Array type for manipulate information </typeparam>
@@ -18,7 +18,7 @@ namespace DesignPatterns.DoubleBuffer
         /// <param name="fromData"> Array for manipulate information </param>
         /// <param name="applyToCell"> Manipulate function. Function parameters must be data array value, another array value, cell x index, cell y index. Return must be new manipulated cell value. </param>
         /// <returns>Returns manipulated array data </returns>
-        public static ArrayType1[,] ManipulateFromAnother<ArrayType1, ArrayType2>(ArrayType1[,] data, ArrayType2[,] fromData, System.Func<ArrayType1, ArrayType2, int, int, ArrayType1> applyToCell) where ArrayType1 : new()
+        public static ArrayType1[,] ForEach<ArrayType1, ArrayType2>(ArrayType1[,] data, ArrayType2[,] fromData, System.Func<ArrayType1, ArrayType2, int, int, ArrayType1> applyToCell) where ArrayType1 : new()
         {
             ArrayType1[,] newData = new ArrayType1[data.GetLength(0), data.GetLength(1)];
             for (int y = 0; y < data.GetLength(0); y++)
@@ -39,7 +39,7 @@ namespace DesignPatterns.DoubleBuffer
         /// <param name="data"> Array to manipulate </param>
         /// <param name="applyToCell"> Manipulate function. Function parameters must be array value, cell x index, cell y index. Return must be new manipulated cell value. </param>
         /// <returns>Returns manipulated array data </returns>
-        public static ArrayType[,] Manipulate<ArrayType>(ArrayType[,] data, System.Func<ArrayType, int, int, ArrayType> applyToCell) where ArrayType : new()
+        public static ArrayType[,] ForEach<ArrayType>(ArrayType[,] data, System.Func<ArrayType, int, int, ArrayType> applyToCell) where ArrayType : new()
         {
             ArrayType[,] newData = new ArrayType[data.GetLength(0), data.GetLength(1)];
             for (int y = 0; y < data.GetLength(0); y++)
@@ -54,7 +54,7 @@ namespace DesignPatterns.DoubleBuffer
         }
 
         /// <summary>
-        /// Function for manipulate your 1D array data with value from another 2D array
+        /// Function for generate 1D array from another 2D array
         /// </summary>
         /// <typeparam name="ArrayType1"> Array type to manipulate </typeparam>
         /// <typeparam name="ArrayType2"> Array type for manipulate information </typeparam>
@@ -62,7 +62,7 @@ namespace DesignPatterns.DoubleBuffer
         /// <param name="fromData"> 2D array for manipulate information </param>
         /// <param name="applyToCell"> Manipulate function. Function parameters must be data array value, another array value, cell x index, cell y index. Return must be new manipulated cell value. </param>
         /// <returns>Returns manipulated array data </returns>
-        public static ArrayType1[] ManipulateFrom2DTo1D<ArrayType1, ArrayType2>(ArrayType1[] data, ArrayType2[,] fromData, System.Func<ArrayType1, ArrayType2, int, int, ArrayType1> applyToCell) where ArrayType1 : new()
+        public static ArrayType1[] ForEach<ArrayType1, ArrayType2>(ArrayType1[] data, ArrayType2[,] fromData, System.Func<ArrayType1, ArrayType2, int, int, ArrayType1> applyToCell) where ArrayType1 : new()
         {
             ArrayType1[] newData = new ArrayType1[data.Length];
             for (int y = 0; y < fromData.GetLength(1); y++)

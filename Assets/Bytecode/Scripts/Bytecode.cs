@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DesignPatterns.Bytecode
 {
-    internal class Bytecode
+    internal class Bytecode // class to write the bytecode
     {
         public static readonly int[] bytecode = new int[]
         {

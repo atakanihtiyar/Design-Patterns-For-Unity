@@ -4,9 +4,6 @@ using UnityEngine;
 
 namespace DesignPatterns.ServiceLocator
 {
-    /// <summary>
-    /// Generic service locator class
-    /// </summary>
     /// <typeparam name="T">Service type</typeparam>
     public class ServiceLocator<T> : MonoBehaviour where T : new()
     {

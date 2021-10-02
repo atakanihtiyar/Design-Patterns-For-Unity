@@ -15,7 +15,7 @@ namespace DesignPatterns.ObjectPool
 
         private void FixedUpdate()
         {
-            objectPool.SpawnFromPool(transform.position, Quaternion.identity);
+            objectPool.Next(transform.position, Quaternion.identity);
         }
     }
 }

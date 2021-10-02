@@ -5,13 +5,10 @@ using UnityEngine;
 
 namespace DesignPatterns.ObjectPool
 {
-    /// <summary>
-    /// Object pool class
-    /// </summary>
-    [System.Serializable]
+    [Serializable]
     public class ObjectPool
     {
-        [System.Serializable]
+        [Serializable]
         private class PoolObject
         {
             public GameObject prefab;
@@ -20,6 +17,7 @@ namespace DesignPatterns.ObjectPool
 
         private Queue<GameObject> _pool = null;
         [SerializeField] private List<PoolObject> prefabsToBePooled;
+        [SerializeField] private Transform objectsParent;
 
         /// <summary>
         /// Initializes the pool. Call this function before.
@@ -39,13 +37,7 @@ namespace DesignPatterns.ObjectPool
             });
         }
 
-        /// <summary>
-        /// Returns the next object from the pool queue.
-        /// </summary>
-        /// <param name="position">Position for new object</param>
-        /// <param name="rotation">Rotation for new object</param>
-        /// <returns></returns>
-        public GameObject SpawnFromPool(Vector3 position, Quaternion rotation)
+        public GameObject Next(Vector3 position, Quaternion rotation)
         {
             if (_pool == null)
             {

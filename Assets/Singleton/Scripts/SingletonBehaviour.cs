@@ -19,9 +19,6 @@ namespace DesignPatterns.Singleton
 
         #region Properties
 
-        /// <summary>
-        /// Returns the instance of the singleton class
-        /// </summary>
         public static T Instance {
             get
             {

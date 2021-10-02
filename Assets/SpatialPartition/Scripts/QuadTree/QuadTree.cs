@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace DesignPatterns.SpatialPartition
 {
-    /// <typeparam name="T">Should behave like shape</typeparam>
     public class QuadTree<T> where T : IAmShape
     {
         #region Fields

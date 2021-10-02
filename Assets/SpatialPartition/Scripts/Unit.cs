@@ -7,13 +7,23 @@ namespace DesignPatterns.SpatialPartition
     [RequireComponent(typeof(MeshRenderer))]
     internal class Unit : MonoBehaviour, IAmCircle
     {
+        #region Fields
+
         private MeshRenderer meshRenderer;
         private MaterialPropertyBlock propBlock;
 
         [SerializeField] private float speed;
         private Circle circle;
 
+        #endregion
+
+        #region Properties
+
         public Circle Circle { get => circle; private set => circle = value; }
+
+        #endregion
+
+        #region Unity Lifecycle Functions
 
         private void Awake()
         {
@@ -24,6 +34,10 @@ namespace DesignPatterns.SpatialPartition
 
             transform.rotation = GetRandomDirection();
         }
+
+        #endregion
+
+        #region Movement
 
         public void Move(QuadTree<Unit> _quadTree, float deltaTime)
         {
@@ -49,6 +63,10 @@ namespace DesignPatterns.SpatialPartition
             return randomDir;
         }
 
+        #endregion
+
+        #region Helpers
+
         public void SetColor(Color newColor)
         {
             meshRenderer.GetPropertyBlock(propBlock);
@@ -67,6 +85,8 @@ namespace DesignPatterns.SpatialPartition
         {
             return Circle;
         }
+
+        #endregion
     }
 }
 

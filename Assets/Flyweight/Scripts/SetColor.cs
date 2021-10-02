@@ -7,12 +7,10 @@ namespace DesignPatterns.Flyweight
     internal class SetColor : MonoBehaviour
     {
         private Renderer _renderer;
-        private MaterialPropertyBlock _propBlock;
 
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
-            _propBlock = new MaterialPropertyBlock();
         }
 
         private void Update()

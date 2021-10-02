@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DesignPatterns.Command
 {
     /// <summary>
-    /// Command invoker class. Stores and manages commands. 
+    /// Stores and manages commands. 
     /// </summary>
     public class CommandInvoker
     {
@@ -22,10 +22,6 @@ namespace DesignPatterns.Command
             _commands = new Stack<ICommand>();
         }
 
-        /// <summary>
-        /// Execute given command
-        /// </summary>
-        /// <param name="command">Command to execute</param>
         public void Execute(ICommand command)
         {
             if (command != null)
@@ -35,15 +31,12 @@ namespace DesignPatterns.Command
             }
         }
 
-        /// <summary>
-        /// Undo last command
-        /// </summary>
-        public void Undo()
+        public void Rewind()
         {
             if (_commands.Count != 0)
             {
                 ICommand command = _commands.Pop();
-                command.Undo();
+                command.Rewind();
             }
         }
 

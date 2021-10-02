@@ -6,9 +6,9 @@ namespace DesignPatterns.Singleton
 {
     internal class Tester : MonoBehaviour
     {
-        private void OnEnable()
+        private void Start()
         {
-            Debug.Log(GameManager.Instance.playerName);
+            Debug.Log("Player name: " + GameManager.Instance.playerName);
         }
     }
 }

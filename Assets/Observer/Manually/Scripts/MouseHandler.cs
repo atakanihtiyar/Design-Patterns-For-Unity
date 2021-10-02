@@ -13,7 +13,7 @@ namespace DesignPatterns.Observer.Manual
 
         public override void OnNotify(GameObject obj, Vector3 mouseLocalPositionOnSubject)
         {
-            Debug.Log("I am reporting as " + gameObject.name + ". Someone touched the " + mouseLocalPositionOnSubject.ToString() + " of " + obj.name + ".");
+            Debug.Log("I am reporting as " + gameObject.name + ". Someone touched the " + obj.name + ".\nMouse position" + mouseLocalPositionOnSubject.ToString());
         }
     }
 }

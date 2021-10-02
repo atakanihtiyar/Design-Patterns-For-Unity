@@ -8,7 +8,7 @@ namespace DesignPatterns.Bytecode
     {
         private GameManager _gameManager;
 
-        private Stack<int> stackMachine = new Stack<int>();
+        private Stack<int> stackMachine = new Stack<int>(); // to temporarily store values in bytecode
         private const int MAX_STACK = 128;
 
         public VirtualMachine(GameManager gameManager)

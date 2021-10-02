@@ -64,7 +64,7 @@ namespace DesignPatterns.SpatialPartition
                 unit.Move(quadTree, Time.deltaTime);
                 quadTree.Insert(unit);
             });
-            quadTree.ShowBoundries();
+            quadTree.ShowBoundries(); // if you want to see quadtree, you must open gizmos
 
             if (useQuadTreeForHandleMelee)
                 HandleMeleeWithQuadTree();
@@ -72,7 +72,7 @@ namespace DesignPatterns.SpatialPartition
                 HandleMelee();
 
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            PickUnits(mousePosition, mouseRange);
+            PickUnits(mousePosition, mouseRange); // if you want to see quadtree, you must open gizmos
 
             GenerateNewUnitWithMouse(numberOfUnitsAtOneTimeWithMouse, 2f);
         }
@@ -120,6 +120,24 @@ namespace DesignPatterns.SpatialPartition
             quadTree.Insert(unit);
         }
 
+        public void ShowBoundries(Rectangle boundry)
+        {
+            float x = boundry.centerX;
+            float y = boundry.centerY;
+            float w = boundry.halfOfWidth;
+            float h = boundry.halfOfHeight;
+
+            Vector3 nwCorner = new Vector3(x - w, 0, y + h);
+            Vector3 neCorner = new Vector3(x + w, 0, y + h);
+            Vector3 swCorner = new Vector3(x - w, 0, y - h);
+            Vector3 seCorner = new Vector3(x + w, 0, y - h);
+
+            Debug.DrawLine(nwCorner, neCorner, pickWithMouseColor);
+            Debug.DrawLine(nwCorner, swCorner, pickWithMouseColor);
+            Debug.DrawLine(neCorner, seCorner, pickWithMouseColor);
+            Debug.DrawLine(swCorner, seCorner, pickWithMouseColor);
+        }
+
         #endregion
 
         #region Melee
@@ -154,24 +172,6 @@ namespace DesignPatterns.SpatialPartition
                     unit.SetColor(collidingUnitColor);
                 }
             });
-        }
-
-        public void ShowBoundries(Rectangle boundry)
-        {
-            float x = boundry.centerX;
-            float y = boundry.centerY;
-            float w = boundry.halfOfWidth;
-            float h = boundry.halfOfHeight;
-
-            Vector3 nwCorner = new Vector3(x - w, 0, y + h);
-            Vector3 neCorner = new Vector3(x + w, 0, y + h);
-            Vector3 swCorner = new Vector3(x - w, 0, y - h);
-            Vector3 seCorner = new Vector3(x + w, 0, y - h);
-
-            Debug.DrawLine(nwCorner, neCorner, pickWithMouseColor);
-            Debug.DrawLine(nwCorner, swCorner, pickWithMouseColor);
-            Debug.DrawLine(neCorner, seCorner, pickWithMouseColor);
-            Debug.DrawLine(swCorner, seCorner, pickWithMouseColor);
         }
 
         #endregion

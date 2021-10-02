@@ -6,6 +6,6 @@ namespace DesignPatterns.Singleton
 {
     internal class GameManager : SingletonBehaviour<GameManager>
     {
-        internal string playerName = "Persistent Player";
+        internal string playerName = "El presidente";
     }
 }

@@ -9,7 +9,7 @@ namespace DesignPatterns.GenericAbstractFactory
         private void Start()
         {
             PersonalComputer personalComputer = SpawnPersonalComputer();
-            Debug.Log("Personal Computer\nRam capacity: " + personalComputer.ram.capacity + "gb - Processor speed: " + personalComputer.processor.speed + "Ghz - Monitor size: " + personalComputer.monitor.size + " inç");
+            Debug.Log("Personal Computer\nRam capacity: " + personalComputer.ram.capacity + "gb - Processor speed: " + personalComputer.processor.speed + "Ghz - Monitor size: " + personalComputer.monitor.size + " inch");
             personalComputer.processor.Operate();
 
             MicroController controller = SpawnMicroController();

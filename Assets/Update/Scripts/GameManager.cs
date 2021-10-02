@@ -12,7 +12,7 @@ namespace DesignPatterns.Update
 
         private void Start()
         {
-            updatables = updatableObjects.OfType<IUpdatable>().ToList();
+            updatables = updatableObjects.OfType<IUpdatable>().ToList(); // OfType should be used instead of Cast to avoid potential errors caused by objects that do not inherit IUpdatable. 
             Debug.Log("Updatables count: " + updatables.Count);
 
             updatables.ForEach(updatable =>

@@ -78,7 +78,7 @@ namespace DesignPatterns.DoubleBuffer
             {
                 Random.InitState(seed.GetHashCode());
             }
-            bufferOld = ArrayManipulator.Manipulate(bufferOld, GetRandomCellValue);
+            bufferOld = ArrayManipulator.ForEach(bufferOld, GetRandomCellValue);
         }
 
         private void DisplayCave(int[,] data)
@@ -89,7 +89,7 @@ namespace DesignPatterns.DoubleBuffer
             texture.filterMode = FilterMode.Point;
 
             Color[] textureColors = new Color[gridSize * gridSize];
-            textureColors = ArrayManipulator.ManipulateFrom2DTo1D<Color, int>(textureColors, data, GetTextureFromValue);
+            textureColors = ArrayManipulator.ForEach(textureColors, data, GetTextureFromValue);
 
             texture.SetPixels(textureColors);
             texture.Apply();
@@ -107,7 +107,7 @@ namespace DesignPatterns.DoubleBuffer
 
             for (int i = 0; i < smoothSteps; i++)
             {
-                RunCellularAutomataStep();
+                CellularAutomataStep();
 
                 DisplayCave(bufferNew);
 
@@ -120,9 +120,9 @@ namespace DesignPatterns.DoubleBuffer
             Debug.Log("Simulation completed");
         }
 
-        private void RunCellularAutomataStep()
+        private void CellularAutomataStep()
         {
-            bufferNew = ArrayManipulator.Manipulate(bufferOld, CellularAutomataCellProcess);
+            bufferNew = ArrayManipulator.ForEach(bufferOld, CellularAutomataCellProcess);
         }
 
         private int GetSurroundingWallCount(int cellX, int cellY)
@@ -178,12 +178,12 @@ namespace DesignPatterns.DoubleBuffer
                 return 1;
             }
 
-            int surroundingWalls = GetSurroundingWallCount(cellX, cellY);
-            if (surroundingWalls > 4)
+            int surroundingWallCount = GetSurroundingWallCount(cellX, cellY);
+            if (surroundingWallCount > 4)
             {
                 return 1;
             }
-            else if (surroundingWalls == 4)
+            else if (surroundingWallCount == 4)
             {
                 return cellValue;
             }
