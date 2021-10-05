@@ -1,6 +1,5 @@
 # Singleton
 
-There are 3 controls:
 ### Create handling
 #### 1. If there are no objects<br>
 We check this in two different ways. Because if the instance existed before and was destroyed, we can't check with equal operator. We should use equals method.
