@@ -1,32 +1,33 @@
 # Design-Patterns-For-Unity
+Each pattern has been tested on its own scenes
 
 ## Behavioral
-* [Command](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Command)
-* [State](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/State)
-* [Observer](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Observer)
-* [Strategy](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Strategy)
-* [Subclass Sandbox](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/SubclassSandbox)
-* [Type Object](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/TypeObject)
-* [Bytecode](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Bytecode)
+* [Command](Assets/Command)
+* [State](Assets/State)
+* [Observer](Assets/Observer)
+* [Strategy](Assets/Strategy)
+* [Subclass Sandbox](Assets/SubclassSandbox)
+* [Type Object](Assets/TypeObject)
+* [Bytecode](Assets/Bytecode)
 
 ## Structural
-* [Flyweight](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Flyweight)
+* [Flyweight](Assets/Flyweight)
 
 ## Creational
-* [Singleton](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Singleton)
-* [Abstract Factory](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Factory/GenericAbstract)
-* [Method Factory](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Factory/GenericMethod)
-* [Object Pool](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/ObjectPool)
+* [Singleton](Assets/Singleton)
+* [Abstract Factory](Assets/Factory/GenericAbstract)
+* [Method Factory](Assets/Factory/GenericMethod)
+* [Object Pool](Assets/ObjectPool)
 
 ## Architectural
-* [Service Locator](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/ServiceLocator)
+* [Service Locator](Assets/ServiceLocator)
 
 ## Sequencing
-* [Double Buffer](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/DoubleBuffer)
-* [Update](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/Update)
+* [Double Buffer](Assets/DoubleBuffer)
+* [Update](Assets/Update)
 
 ## Optimization
-* [Spatial Partition](https://github.com/atakanihtiyar/Design-Patterns-For-Unity/tree/master/Assets/SpatialPartition)
+* [Spatial Partition](Assets/SpatialPartition)
 
 <br><br>
 For Categorization: <br>
