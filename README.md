@@ -4,7 +4,7 @@ Each pattern has been tested on its own scenes
 ## Behavioral
 * [Command](https://faramira.com/implementing-a-command-design-pattern-in-unity/)
 * [State](https://app.pluralsight.com/library/courses/unity-finite-state-machines/table-of-contents)
-* [Observer](https://www.youtube.com/watch?v=hQE8lQk9ikE)
+* [Observer](https://www.youtube.com/watch?v=hnxzYdnjH1U)
 * [Strategy](https://www.youtube.com/watch?v=yjZsAl13trk)
 * [Subclass Sandbox](https://github.com/Habrador/Unity-Programming-Patterns)
 * [Type Object](https://github.com/Habrador/Unity-Programming-Patterns)
